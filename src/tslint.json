@@ -12,6 +12,12 @@
       "element",
       "app",
       "kebab-case"
+    ],
+    "module-selector": [
+      true,
+      "element",
+      "app",
+      "node"
     ]
   }
 }

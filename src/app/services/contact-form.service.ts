@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent } from '../contacts/contacts.component';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class ContactFormService {
         .subscribe(res => console.log('Successful'));
 }
 
-updateAdUnit(name, email, gender, message) {
+updateAddContact(name, email, gender, message) {
 
   const obj = {
     name: name,

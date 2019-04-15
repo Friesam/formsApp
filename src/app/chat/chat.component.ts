@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
 export class ServicesComponent implements OnInit {
 
