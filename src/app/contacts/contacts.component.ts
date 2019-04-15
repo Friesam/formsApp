@@ -11,7 +11,7 @@ import {ContactFormService} from '../contact-form.service';
 export class ContactsComponent implements OnInit {
   genders = [ 'male', 'female'];
   contactForm: FormGroup;
-  constructor() { }
+  constructor(private contactCard: ContactFormService) { }
 
   ngOnInit(): void {
     this.contactForm = new FormGroup({
@@ -31,5 +31,9 @@ export class ContactsComponent implements OnInit {
   
   onSubmit() {
     console.log(this.contactForm.value);
+  }
+
+  addContact(name, email, gender, message) {
+    this.contactCard.addContact(name, email, gender, message);
   }
 }
