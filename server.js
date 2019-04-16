@@ -4,7 +4,11 @@
     bodyParser = require('body-parser'),
     cors = require('cors'),
     mongoose = require('mongoose'),
+<<<<<<< HEAD
     config = require('./client/config/DB');
+=======
+    config = require('./config/DB');
+>>>>>>> origin/master
     var expressJwt = require('express-jwt');
 
     const app = express();
@@ -31,9 +35,15 @@
 
     // routes
     app.use('/users', require('./controllers/users.controller'));
+<<<<<<< HEAD
     app.use(cors());
     app.use(bodyParser.json());
  
+=======
+    
+    app.use(bodyParser.json());
+    app.use(cors());
+>>>>>>> origin/master
     app.use(bodyParser.urlencoded({ extended: false }));
     const port = process.env.PORT || 4000;
 
@@ -42,6 +52,7 @@
     const server = app.listen(port, function(){
      console.log('Listening on port ' + port);
     });
+<<<<<<< HEAD
 
 
     
@@ -72,3 +83,5 @@
 // const server = app.listen(port, function(){
 //  console.log('Listening on port ' + port);
 // });
+=======
+>>>>>>> origin/master

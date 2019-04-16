@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">  
+        <form [formGroup]="contactForm" (ngSubmit)="addContact()">
+            <div class="form-group">
+              <label>Name</label>
+              <input 
+              type="text" 
+              id = "name"
+              class="form-control" 
+              formControlName="name"
+              name="name"
+              required/>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">
+                  Name is required.
+                </div>
+                <div *ngIf="name.errors.minlength">
+                  Name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input 
+              type="email" 
+              class="form-control" 
+              formControlName="email"
+              name="email"
+              required/>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <div *ngIf="email.errors.required">
+                      Email is required.
+                    </div>
+              </div>
+              </div>
+              <div class="radio" *ngFor = "let gender of genders">
+                <label>
+                  <input 
+                  type="radio" 
+                  formControlName="gender"
+                  [value]="gender">
+                  {{gender}}
+                </label>
+                </div>
+                <div class="form-group">
+                  <label>Message</label>
+                  <textarea 
+                  class="form-control" 
+                  formControlName="message"
+                  name="message">
+                  </textarea>
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                      <div *ngIf="message.errors.required">
+                        Message is required.
+                      </div>
+                    </div>
+                  </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="!contactForm.valid"
+                >
+                Submit
+              </button>
+              </div>
+          </form>
+    </div>
+  </div>
+</div>

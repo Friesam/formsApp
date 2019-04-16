@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">  
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <div class="form-group">
+              <label>Username</label>
+              <input 
+              type="text" 
+              id = "username"
+              class="form-control" 
+              formControlName="username"
+              name="username"
+              required/>
+              <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div *ngIf="username.errors.required">
+                  Userame is required.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input 
+              type="password" 
+              class="form-control" 
+              formControlName="password"
+              name="password"
+              required/>
+              <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                  <div *ngIf="password.errors.required">
+                      Password is required.
+                    </div>
+              </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary"
+                [disabled]="loading"
+                >
+                Submit
+              </button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+              </div>
+          </form>
+    </div>
+  </div>
+</div>
